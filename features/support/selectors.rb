@@ -10,14 +10,10 @@ module HtmlSelectorsHelpers
 
     when /the page/
       "html > body"
-    when /the (header|info|intro|content|footer) wrapper/
-      "##{$1}_wrapper"
-    when /main content/
-      "#main_content"
-    when /header/
-      "#header_wrapper"
-    when /sidebar/
-      "#side_column"
+    when /main heading/
+      "h1#page-title"
+    when /tasks list/
+      "#tasks"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

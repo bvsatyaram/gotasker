@@ -32,6 +32,7 @@ end
 When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
 end
+
 Then /^I should be redirected to (.+)$/ do |page|
   puts 'TODO: make this done'
   step "I should be on #{page}"
@@ -39,7 +40,7 @@ end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
   if page.respond_to? :should
-    page.should have_content(text)
+    expect(page).to have_content(text)
   else
     assert page.has_content?(text)
   end
