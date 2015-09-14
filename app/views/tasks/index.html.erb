@@ -1,6 +1,10 @@
 <h1 id="page-title">My Tasks</h1>
 <div id="tasks">
-  <p>You do not have any tasks yet</p>
+  <% if @tasks.any? %>
+    <%= render @tasks %>
+  <% else %>
+    <p>You do not have any tasks yet</p>
+  <% end %>
 </div>
 <div id="task-flash"></div>
 <%= simple_form_for @new_task, remote: true do |f| %>
